@@ -1,13 +1,3 @@
-"""
-Questo modulo implementa due modelli di Reservoir Computing (RC): EuSN (Euler State Network) ed ESN (Echo State Network).
-
-Per entrambi i modelli:
-- Il reservoir è implementato in TensorFlow/Keras come rete RNN personalizzata, utilizzando una cella custom (`EulerReservoirCell` per EuSN, `ReservoirCell` per ESN).
-- La cella `EulerReservoirCell` integra la dinamica interna con uno schema di Eulero a passo fisso e dissipazione controllata, mentre `ReservoirCell` segue la dinamica standard delle Echo State Networks con controllo del raggio spettrale e integratore leaky.
-- Il readout è implementato separatamente con `RidgeClassifierCV` di Scikit-learn, che esegue una classificazione lineare sugli stati finali del reservoir. Il parametro di regolarizzazione `alpha` viene selezionato automaticamente su un range logaritmico tra 1 e 10.000 (`np.logspace(0, 4, 20)`), con validazione incrociata a 4 fold.
-
-I modelli allenano esclusivamente il readout: il reservoir resta fisso dopo l'inizializzazione casuale, in linea con il paradigma classico del Reservoir Computing.
-"""
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import numpy as np
@@ -164,3 +154,4 @@ class ESN(keras.Model):
         x_states = self.reservoir(x).numpy()
         return self.readout.score(x_states, y)
     
+
