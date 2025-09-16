@@ -42,7 +42,7 @@ def safe_stop(tracker):
     return result if result is not None else 0.0
 
 #Dataset
-dataset_name = "CharacterTrajectories"
+dataset_name = "nome"
 
 #Caricamento del training set fornito dal dataset AEON
 x_raw, y_raw = load_classification(name=dataset_name, split="train")
@@ -574,3 +574,4 @@ df_results_multi.columns = pd.MultiIndex.from_tuples(df_results_multi.columns) #
 
 print(f"\nTabella finale: {dataset_name}\n")
 print(df_results_multi.to_string(index=False))
+
