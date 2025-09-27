@@ -1,4 +1,4 @@
-# TirocinioTesi-Risaliti
+# Tesi-SaraRisaliti
 
 Dataset utilizzati per il confronto (confronto.py):
 - Adiac
