@@ -11,7 +11,6 @@ def compute_srnn_NH_min(reservoir_units: int, Nx: int, Ny: int):
             return NH, cost_trainable
         NH += 1
 
-#Calcolo il numero minimo di unità nascoste (NH) per GRU affinché il costo dei parametri sia almeno pari a quello del reservoir.
 def compute_gru_NH_min(reservoir_units: int, Nx: int, Ny: int, Tx: int):
     NH = 1
     cost_reservoir = reservoir_units * Ny + Ny
