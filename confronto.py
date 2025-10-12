@@ -17,7 +17,7 @@ from tensorflow.keras.layers import GRU, SimpleRNN, Dense
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping
 
-from compute_NH import compute_NH_all
+from compute_Nh import compute_NH_all
 from eusnesn import EuSN, ESN
 from aeon.datasets import load_classification
 
@@ -574,4 +574,5 @@ df_results_multi.columns = pd.MultiIndex.from_tuples(df_results_multi.columns) #
 
 print(f"\nTabella finale: {dataset_name}\n")
 print(df_results_multi.to_string(index=False))
+
 
